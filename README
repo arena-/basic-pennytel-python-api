@@ -1,2 +1,5 @@
 This is just a simple python pennytel api python client.
 
+arena
+- focusing on sms
+- added constants
