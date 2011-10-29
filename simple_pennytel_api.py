@@ -12,7 +12,8 @@ PENNYTEL_API_URL = "https://www.pennytel.com/pennytelapi/services/PennyTelAPI" #
 #TO = "" # phone number to send it to, include country code e.g. 61400000000
 #SMS_MESSAGE = "" # the sms message to be sent
 
-import sys, string
+import sys
+import string
 import lxml
 import pycurl
 import StringIO
