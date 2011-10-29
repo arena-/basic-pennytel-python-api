@@ -22,7 +22,7 @@ class PennytelConException(Exception):
 		self.response = response
 
 class PennytelCon:
-	def __init__(self, username="_none_", password="_none_", connection=pycurl.Curl(), post_url=PENNYTEL_API_URL):
+	def __init__(self, username="_none_", password="_none_", post_url="_none_", connection=pycurl.Curl()):
 		self._username = username
 		self._password = password
 		self._post_url = post_url
@@ -107,19 +107,14 @@ class PennytelCon:
 			)
 		)
 		return self._send_soap_request()
-	
-	def get_version(self):
-		self._action_specific_xml = (
-			E.getVersion ()
-		)
-		return self._send_soap_request()
+
 
 def main():
-	penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD)
+	penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD, PENNYTEL_API_URL)
 	print penny.send_sms(SMS_MESSAGE, TO)
 	# print penny.trigger_callback("123", "456")
-	# print penny.get_contacts()
 
 if __name__ == "__main__":
 	main()
-
+	
+	
