@@ -79,7 +79,8 @@ class PennytelCon:
 				E.date(date)
 			)
 		)
-		return self._send_soap_request()
+		self._send_soap_request()
+		return "SMS sent successfully!"
 
 	def trigger_callback(self, leg1, leg2, date="2007-02-01T09:37:00"):
 		self._action_specific_xml = (
