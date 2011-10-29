@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# my fork of version created by d1b
+
 # SETTINGS
 PENNYTEL_ACCOUNT_NUMBER = ""
 PENNYTEL_PASSWORD = "" 
