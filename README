@@ -2,4 +2,5 @@ This is just a simple python pennytel api python client.
 
 arena
 - focusing on sms
-- added constants
+- added definitions
+- added GUI window for "send sms" (just a button)
