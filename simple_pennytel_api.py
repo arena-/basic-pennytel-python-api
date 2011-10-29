@@ -119,8 +119,7 @@ class PennytelCon:
 		)
 		return self._send_soap_request()
 
-# connect		
-penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD, PENNYTEL_API_URL)
+
 
 # GUI STUFF 
 root = Tkinter.Tk()
@@ -131,6 +130,8 @@ def smsCallBack():
 	entry_sms_message = b.get()	
 	print entry_to
 	print entry_sms_message
+	# connect		
+	penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD, PENNYTEL_API_URL)
 	penny.send_sms(entry_sms_message, entry_to)
 	tkMessageBox.showinfo( "SMS Status", "SMS sent successfully!")
 
