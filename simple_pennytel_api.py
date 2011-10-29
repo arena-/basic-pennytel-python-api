@@ -107,6 +107,12 @@ class PennytelCon:
 			)
 		)
 		return self._send_soap_request()
+	
+	def get_version(self):
+		self._action_specific_xml = (
+			E.getVersion ()
+		)
+		return self._send_soap_request()
 
 def main():
 	penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD)
