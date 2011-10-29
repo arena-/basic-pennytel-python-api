@@ -23,6 +23,8 @@ from lxml.builder import E
 # GUI library
 import Tkinter
 import tkMessageBox
+import tkSimpleDialog
+
 
 class PennytelConException(Exception):
 	def __init__(self, message, response=None):
@@ -122,13 +124,27 @@ penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD, PENNYTEL_API_URL
 
 # GUI STUFF 
 root = Tkinter.Tk()
+root.title("Send an SMS")
 
 def smsCallBack():
-	penny.send_sms(SMS_MESSAGE, TO)
+	entry_to = a.get()
+	entry_sms_message = b.get()	
+	print entry_to
+	print entry_sms_message
+	penny.send_sms(entry_sms_message, entry_to)
 	tkMessageBox.showinfo( "SMS Status", "SMS sent successfully!")
+
+Tkinter.Label(root, text="To: ").pack()
+
+a = Tkinter.Entry(root, width=15)
+a.pack()
+
+Tkinter.Label(root, text="Message: ").pack()
+
+b = Tkinter.Entry(root, width=30)
+b.pack()
 	
-w = Tkinter.Button(root, text="Send SMS Now", command = smsCallBack)
-w.pack()
+Tkinter.Button(root, text="Send SMS Now", command = smsCallBack).pack()
  
 root.mainloop()
     	
