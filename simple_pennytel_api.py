@@ -1,4 +1,13 @@
 #!/usr/bin/python
+
+# SETTINGS
+PENNYTEL_ACCOUNT_NUMBER = ""
+PENNYTEL_PASSWORD = "" 
+
+# THE MESSAGE 
+TO = "" # phone number to send it to, include country code e.g. 61400000000
+SMS_MESSAGE = "" # the sms message to be sent
+
 import lxml
 import pycurl
 import StringIO
@@ -99,10 +108,10 @@ class PennytelCon:
 		return self._send_soap_request()
 
 def main():
-	penny = PennytelCon("bob", "jane")
-	print penny.send_sms("hi", "123123")
-	print penny.trigger_callback("123", "456")
-	print penny.get_contacts()
+	penny = PennytelCon(PENNYTEL_ACCOUNT_NUMBER, PENNYTEL_PASSWORD)
+	print penny.send_sms(SMS_MESSAGE, TO)
+	# print penny.trigger_callback("123", "456")
+	# print penny.get_contacts()
 
 if __name__ == "__main__":
 	main()
