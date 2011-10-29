@@ -139,12 +139,14 @@ Tkinter.Label(root, text="To: ").pack()
 a = Tkinter.Entry(root, width=15)
 a.pack()
 
-Tkinter.Label(root, text="Message: ").pack()
+l = Tkinter.Label(root, text="Message: ")
+l.pack()
 
 b = Tkinter.Entry(root, width=30)
 b.pack()
 	
-Tkinter.Button(root, text="Send SMS Now", command = smsCallBack).pack()
+l = Tkinter.Button(root, text="Send SMS Now", command = smsCallBack)
+l.pack()
  
 root.mainloop()
     	
