@@ -3,6 +3,7 @@
 # SETTINGS
 PENNYTEL_ACCOUNT_NUMBER = ""
 PENNYTEL_PASSWORD = "" 
+PENNYTEL_API_URL = "https://www.pennytel.com/pennytelapi/services/PennyTelAPI" # use https://  
 
 # THE MESSAGE 
 TO = "" # phone number to send it to, include country code e.g. 61400000000
@@ -21,7 +22,7 @@ class PennytelConException(Exception):
 		self.response = response
 
 class PennytelCon:
-	def __init__(self, username="_none_", password="_none_", connection=pycurl.Curl(), post_url="https://www.pennytel.com/pennytelapi/services/PennyTelAPI"):
+	def __init__(self, username="_none_", password="_none_", connection=pycurl.Curl(), post_url=PENNYTEL_API_URL):
 		self._username = username
 		self._password = password
 		self._post_url = post_url
